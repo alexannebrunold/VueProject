@@ -6,6 +6,7 @@ import EventShow from "../views/EventShow.vue"
 Vue.use(Router)
 
 export default new Router({
+  mode: "history",
   routes: [
     {
       path: "/",
@@ -13,9 +14,10 @@ export default new Router({
       component: EventList
     },
     {
-      path: "/event",
+      path: "/event/:id",
       name: "event-show",
-      component: EventShow
+      component: EventShow,
+      props: true
       // route level code-splitting
       // this generates a separate chunk (about.[hash].js) for this route
       // which is lazy-loaded when the route is visited.
